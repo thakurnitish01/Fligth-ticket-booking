@@ -1,0 +1,125 @@
+.flight-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    width: 80%; 
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .space
+  {
+    margin-left: 2.5rem;
+  }
+  .flight-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  }
+  .flight-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .flight-route {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+  
+  .flight-route .origin,
+  .flight-route .destination {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333333;
+  }
+  
+  .flight-route .origin {
+    margin-right: 8px;
+  }
+  
+  .arrow-icon {
+    font-size: 1.8rem;
+    margin-top: 3.9rem;
+    width: 100%;
+    color: #666666;
+    transform: rotate(90deg)
+  }
+  .arrow-iconmain
+  {
+    width: 100px;
+  }
+  .flight-time {
+    display: flex;
+    margin-left: auto;
+  }
+  
+  .flight-time .departure-time,
+  .flight-time .arrival-time {
+    font-size: 14px;
+    margin-right: 12px;
+    color: #999999;
+  }
+  
+  .flight-amount {
+    font-size: 20px;
+    font-weight: bold;
+    color: #00aaff;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .flight-image {
+    width: 80px;
+    height: 80px;
+    background-color: #f1f1f1; 
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  
+
+  .flight-card:hover .flight-image::after {
+    opacity: 1;
+  }
+  
+  .flight-image {
+    background-image: url("https://c0.wallpaperflare.com/preview/1001/539/717/airplane-window.jpg");
+    background-size: cover;
+  }
+  .price
+  {
+    font-size: .9rem;
+    color: #01ac65;
+    margin-left: 1rem;
+  }
+  .time
+  {
+    color: #01ac65;
+    font-weight: bold;
+  }
+.background
+{
+    height: 250px;
+     background-image: url('https://media3.giphy.com/media/l2Sq87bt4GOdAnlGo/giphy.gif');
+     /* background-size: cover; */
+}
+.loading
+{
+    width: 500px;
+    margin-left: 40%;
+}
+.delete_button
+{
+    position: relative;
+    left : 12%;
+    bottom: 5rem;
+
+}

@@ -1,0 +1,58 @@
+<app-navbar></app-navbar>
+
+
+<!-- <div class="mt-5">
+  <mat-card class="seat-selection-container mt-5">
+    <div class="search-bar">
+      <mat-form-field appearance="outline">
+        <mat-label>Search Flights</mat-label>
+        <input matInput type="text" [(ngModel)]="searchTerm" (input)="searchFlights()">
+      </mat-form-field>
+    </div>
+  </mat-card>
+</div> -->
+
+<div class="flight-list">
+    <div class="background"></div>
+    <div class="side">
+  <div *ngIf="flights && flights.length > 0; else noFlights">
+    <div class="flight-card" *ngFor="let flight of flights">
+      <div class="flight-info">
+        <div class="flight-route">
+            <span>
+                <mat-icon>flight_takeoff</mat-icon> <br>
+                <div class="origin">{{ flight.origin }}</div>
+            </span>
+        <div class="arrow-iconmain">
+            <mat-icon class="arrow-icon">flight</mat-icon>
+        </div>
+          <span>
+            <mat-icon>flight_land</mat-icon><br>
+          <span class="destination">{{ flight.destination }}</span>
+          </span>
+        </div>
+        <div class="flight-time">
+          <span class="departure-time">Departure: <span class="time">{{ flight.departureTime }}</span></span>
+          <span class="arrival-time">Arrival:<span class="time">{{ flight.arrivalTime }}</span></span>
+        </div>
+        <div class="flight-amount">
+          <div><span class="amount">Price: INR <span class="price">{{ flight.amount | currency:'INR':'symbol':'1.2-3' }}</span></span></div>
+          <div>
+            <button (click)="openFlightDetails(flight.id)" mat-stroked-button>Book Now</button>
+          </div>
+        </div>
+      </div>
+      <button class="delete_button" mat-mini-fab color="warn" (click)="deleteFlight(flight.id)"><mat-icon>delete</mat-icon></button>
+     <!-- <button mat-fab> <mat-icon (click)="deleteFlight(flight.id)">delete</mat-icon></button> -->
+      <div class="flight-image">
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <ng-template #noFlights>
+    <div class="loading">
+        <img src="https://vip.vipbengurion.com/img/plane_loading.d89d7baa.gif" alt="No_Found" width="200">
+    </div>
+  </ng-template>
+</div>

@@ -1,0 +1,313 @@
+/* Add these styles to your component's CSS file (your-component.component.css) */
+
+/* Style for the flight details container */
+.flight-details-container {
+  display: flex;
+  justify-content: space-between;
+  background-color: #f1f1f1;
+  padding: 20px;
+  height: 350px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for the flight details information */
+.flight-details-info {
+  flex: 1;
+  padding: 10px;
+}
+
+/* Style for the flight details title */
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Style for each flight detail row */
+.detail {
+  margin-bottom: 10px;
+}
+
+/* Style for the label */
+.label {
+  font-weight: bold;
+  color: #666;
+  margin-right: 10px;
+}
+
+/* Style for the value */
+.value {
+  color: #333;
+}
+
+/* Style for the N/A value */
+.value:not(:empty)::after {
+  color: #aaa;
+  font-style: italic;
+}
+
+/* Style for the flight details image */
+.flight-details-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+.mat-card {
+  width: 50%;
+  margin: 20px auto;
+  padding: 10px;
+}
+
+.title {
+  margin: 0;
+  text-align: center;
+}
+
+mat-divider {
+  margin: 10px 0;
+}
+
+mat-grid-tile {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+  border-radius: 3rem;
+
+}
+
+mat-grid-tile:hover {
+  background-color: #e0e0e0;
+}
+
+.booked {
+  pointer-events: none;
+  background-color: #d1d1d1;
+}
+
+mat-icon.seat-icon {
+  font-size: 10px;
+  color: #1976d2;
+}
+
+.seat-number {
+  font-size: 5px;
+  margin-top: 4px;
+  font-weight: bold;
+}
+
+/* extra---------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+.background
+{
+    font-size: 2rem;
+    position: relative;
+    top: 4.5rem;
+    right: 5rem;
+    color: gray;
+}
+.main
+{
+    justify-content: space-between;
+    font-family: 'Pacifico', cursive;
+}
+.latter
+{
+    color: #2cbf85;
+}
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  .bus-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px;
+  }
+  
+  .bus-image {
+    width: 120px;
+    height: 120px;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    margin-right: 20px;
+  }
+  
+  .bus-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .bus-details {
+    flex: 1;
+  }
+  
+  .bus-details h2 {
+    margin-top: 4rem;
+    margin-left: 2rem;
+    font-size: 24px;
+    color: #2cbf85;
+    font-family: 'Pacifico', cursive;
+
+    
+  }
+  
+  .details-row {
+    /* display: flex; */
+    justify-content: space-between;
+    margin-top: 10px;
+    margin-left: 2rem;
+  }
+  
+  .detail-item {
+    text-align: center;
+  }
+  
+  .label {
+    font-size: 14px;
+    color: #999;
+  }
+  
+  .value {
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  .available-seats {
+    margin-top: 2rem;
+    width: 60%;
+    /* display: flex; */
+    /* margin-bottom: 3rem; */
+  }
+  
+  .seats-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 5rem;
+    width: 100%;
+  }
+  
+  .seat-item {
+    width: 32px;
+    height: 32px;
+    background-color: #4CAF50;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin: 4px;
+    font-weight: bold;
+  }
+  
+  /* Optional: Add hover effect for the bus card */
+  .bus-card:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .head
+  {
+    margin-top: 5rem;
+  }
+  .titles
+  {
+    color: #2cbf85;
+    font-weight: bold;
+  }
+  /* Add this CSS to your component's CSS file (e.g., detail.component.css) */
+
+/* Center the available seats and selected seats sections */
+.available-seats, .selected-seats {
+  /* text-align: center; */
+  margin-bottom: 20px;
+}
+.selected-seats
+{
+  width: 50%;
+  margin-top: 5rem ;
+  margin-right: 3rem;margin-left: 5rem;
+}
+
+/* Style the seats container */
+.seats-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Style the individual seat items */
+.seat-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  margin: 5px;
+  border: 1px solid #ccc;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.seat-item.selected {
+  background-color: #3f51b5;
+  color: #fff;
+}
+
+.seat-item.booked {
+  background-color: #f44336;
+  color: #fff;
+  cursor: not-allowed;
+}
+
+/* Style the submit button */
+button {
+  margin: 10px 0;
+}
+.mainbody{display: flex;}
+/* Style the passenger details dialog */
+.card {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+}
+.checkbox
+{
+  border: none;
+  /* background-color: transparent; */
+}
+
+@media screen and (max-width : 850px)
+{
+.image{display: none;}
+.selectSeact{display: none;}
+/* .background{display: none;} */
+}
+@media screen and (max-width : 660px)
+{
+}
+@media screen and (max-width : 570px)
+{
+  .background{display: none;}
+  .mainbody{display: block}
+}

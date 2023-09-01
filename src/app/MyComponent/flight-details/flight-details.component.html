@@ -1,0 +1,97 @@
+
+<div>
+  <div>
+<div class="navigation">
+  <app-navbar></app-navbar>
+  <div class="d-flex container main">
+    <div class="logoImg">
+      <img src="https://media.tenor.com/rEQUiYhgsvUAAAAC/airplane-plane.gif" alt="Not Founded" width="200">
+    </div>
+    <div class="background">
+      <p><span class="latter">F</span>light <span class="latter">R</span>oute <span class="latter">D</span>etails</p>
+    </div>
+  </div>
+  <hr class="w-75">
+</div>
+<div *ngIf="flight" class="container mt-4">
+  <div class="d-flex">
+    <div class="mr-3">
+      <div>
+        <h1 class="selectSeact">Select Seat</h1>
+        <div class="image">
+          <img src="https://images.unsplash.com/photo-1604601815764-6d01fc6bebde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8ZmxpZ2h0fGVufDB8fDB8fHww&w=1000&q=80" alt="Not found" width="500">
+        </div>
+      </div>
+    </div>
+    <div class="bus-details">
+      <div>
+        <h2><span class="head">Bus Details</span></h2>
+      </div>
+      <div class="details-row">
+        <div class="font-weight-bold">
+          <p class="label">Bus Route:</p>
+          <div class="value d-flex">
+            <div class="points d-flex">
+              <h1 class="titles">From: &nbsp;</h1>
+              <span>
+                <h1 class="font-weight-bold">{{ flight.origin }} &nbsp;</h1>
+              </span>
+            </div>
+            <div class="points d-flex">
+              <h1 class="titles">To &nbsp;</h1>
+              <h1 class="font-weight-bold">{{ flight.destination }}</h1>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="font-weight-bold detail-item">
+          <p class="label">Duration:</p>
+          <div class="detail-item">
+            <div class="detail-item"><mat-icon>remove</mat-icon><mat-icon>arrow_right_alt</mat-icon></div>
+            <h3>{{flight.arrivalTime}}</h3>
+          </div>
+        </div>
+        <div class="font-weight-bold detail-item">
+          <p class="lable">Departure Time:</p>
+          <h3>{{flight.departureTime}}</h3>
+        </div>
+        <div class="detail">
+          <span class="label">Flight No:</span>
+          <span class="value">{{ flight.flightNo || 'N/A'| uppercase }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="available-seats">
+    <!-- <h3>Available Seats (Total: {{ getTotalAvailableSeats() }})</h3> -->
+    <div class="seats-container m-5">
+      <!-- <div *ngFor="let seat of flight.availableSeats" class="seat-item" [ngClass]="{ 'booked': seat.booked, 'selected': seat.selected && !seat.booked }">
+        <input type="checkbox" class="checkbox" [checked]="seat.selected" [disabled]="seat.booked" (change)="toggleSeat(seat)">
+        {{ seat.number }}
+      </div> -->
+      <div *ngFor="let seat of flight.availableSeats" class="seat-item">
+        <input type="checkbox" class="checkbox" [checked]="seat.selected" [disabled]="seat.booked || (seat.selected && !seat.booked)" (change)="toggleSeat(seat)">
+        <a [routerLink]="['/passenger-detail', seat.number]" [ngClass]="{ 'booked': seat.booked, 'selected': seat.selected && !seat.booked }" class="seat-button">
+          {{ seat.number }}
+        </a>
+      </div>
+      
+    </div>
+    <br><br>
+  </div>
+  <div class="selected-seats">
+    <div class="w-100">
+      <button mat-raised-button color="primary" [disabled]="getSelectedSeats().length === 0" (click)="bookSeats()">Book Selected Seats</button>
+    </div>
+    <h3>Selected Seats</h3>
+    <p *ngIf="getSelectedSeats().length === 0">No seats selected.</p>
+    <ul *ngIf="getSelectedSeats().length > 0">
+      <li *ngFor="let seatNumber of getSelectedSeats()">{{ seatNumber }}</li>
+    </ul>
+  </div>
+</div>
+</div>
+
+
+</div>
